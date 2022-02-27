@@ -1,5 +1,3 @@
-import keep_alive
-import os
 import discord
 from discord.ext import commands
 import musik
@@ -125,5 +123,4 @@ async def purge(ctx, limit: int):
     await ctx.channel.purge(limit=limit)
     
 
-keep_alive.keep_alive()
 client.run(TOKEN)
