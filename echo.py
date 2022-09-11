@@ -14,11 +14,11 @@ class echo(commands.Cog):
     idnya = idku.id
     channel = client.get_channel(idnya)
     sendmsg = channel.send
-    reaction = ":valosagethumbsup:925975156608880640"
+    #reaction = ":valosagethumbsup:925975156608880640"
     await ctx.message.delete()
     await ctx.trigger_typing()
-    cek = await sendmsg(msg1)
-    await cek.add_reaction(reaction)
+    await sendmsg(msg1)
+    #await cek.add_reaction(reaction)
 
 
 def setup(client):
