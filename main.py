@@ -11,7 +11,7 @@ import status
 import afk
 import genshing
 
-cogs=[status,musik,valo,echo,gi,pagi,chat,afk,genshing]
+cogs=[status,musik,valo,echo,gi,pagi,afk,genshing]
 
 TOKEN = "NzQ5OTYzMTkxNTg4NDg3MjQ4.X0znpg.f0RWDm2J-MNxCctOxvHuQYhUr68"
 client = commands.Bot(command_prefix = '$', intents = discord.Intents.all())
