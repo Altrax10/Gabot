@@ -6,7 +6,7 @@ from datetime import datetime
 import echo
 import gi
 import pagi
-import chat
+#import chat
 import status  
 import afk
 import genshing
