@@ -13,7 +13,7 @@ import genshing
 
 cogs=[status,musik,valo,echo,gi,pagi,afk,genshing]
 
-TOKEN = "NzQ5OTYzMTkxNTg4NDg3MjQ4.X0znpg.f0RWDm2J-MNxCctOxvHuQYhUr68"
+TOKEN = "NzQ5OTYzMTkxNTg4NDg3MjQ4.GVNSaf.SIA6heSx2u5W7TBPeo3hjSZgn5tZOl-TP8QQwo"
 client = commands.Bot(command_prefix = '$', intents = discord.Intents.all())
 
 for i in range(len(cogs)):
