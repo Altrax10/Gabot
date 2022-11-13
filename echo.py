@@ -19,5 +19,5 @@ class echo(commands.Cog):
     await ctx.trigger_typing()
     await sendmsg(msg1)
     #await cek.add_reaction(reaction)
-async def setup(bot):
-    await bot.add_cog(echo(bot))
+async def setup(client):
+    await bot.add_cog(echo(client))
