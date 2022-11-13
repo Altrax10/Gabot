@@ -18,7 +18,7 @@ client = commands.Bot(command_prefix = '$', intents = discord.Intents.all())
 #for i in range(len(cogs)):
 #  cogs[i].setup(client)
 
-class myclient(discord.Client)
+class myclient(discord.Client):
   def __init__(self, *args, **kwargs):
     super().__init__(*args, **kwargs)
     
