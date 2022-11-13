@@ -139,9 +139,9 @@ async def on_message_edit(message_before, message_after):
       embed.set_footer(text = f'#{message_before.channel}')
       await sendmsg(embed=embed)
 
-@client.command()
-async def purge(ctx, limit: int):
-    await ctx.channel.purge(limit=limit)
+#@client.command()
+#async def purge(ctx, limit: int):
+#    await ctx.channel.purge(limit=limit)
    
 
 
