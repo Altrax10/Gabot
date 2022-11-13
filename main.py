@@ -32,6 +32,11 @@ async def main():
 async def on_ready():
   print("moshi moshi")
 
+
+@app_commands.command(name="klaim", description="Buat Klaim Badge Dev",guild=discord.object(id=526100423250149386))
+async def self(interation: discord.Interaction):
+    await interation.response.send_message(f"Cek Statusmu Disini")
+
 @client.event
 async def on_member_join(member):
   guild = client.get_guild(526100423250149386)
@@ -130,11 +135,7 @@ async def on_message_edit(message_before, message_after):
 @client.command()
 async def purge(ctx, limit: int):
     await ctx.channel.purge(limit=limit)
-    
-
-@app_commands.command(name="klaim", description="Buat Klaim Badge Dev",guild=discord.object(id=526100423250149386))
-async def self(interation: discord.Interaction):
-    await interation.response.send_message(f"Cek Statusmu Disini")
+   
 
 
 asyncio.run(main())
