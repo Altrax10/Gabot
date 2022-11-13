@@ -29,6 +29,8 @@ async def main():
 
 @client.event
 async def on_ready():
+  await tree.synced(guild=discord.object(id=526100423250149386))
+  self.synced = True
   print("moshi moshi")
 
 @client.event
@@ -129,10 +131,13 @@ async def on_message_edit(message_before, message_after):
 @client.command()
 async def purge(ctx, limit: int):
     await ctx.channel.purge(limit=limit)
-
-@app_commands.command(name="klaim", description="Buat Klaim Badge Dev")
-async def klaim(client, interation:discord.Interaction):
-  await interation.response.send_message(f"Cek Statusmu Disini")
     
+bot = client()
+tree = app_commands.CommandTree(bot)
+
+@tree.command(name="klaim", description="Buat Klaim Badge Dev",guild=discord.object(id=526100423250149386))
+async def self(interation: discord.Interaction):
+    await interation.response.send_message(f"Cek Statusmu Disini")
+
 
 asyncio.run(main())
