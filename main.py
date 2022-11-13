@@ -1,5 +1,4 @@
 import discord
-from discord import app_commands
 from discord.ext import commands
 import musik
 import valo
@@ -10,31 +9,17 @@ import pagi
 #import chat
 import status  
 import afk
-#import genshing
-import asyncio 
-import os
+import genshing
 
-cogs=["cogs.echo"]
-
+cogs=[status,musik,valo,echo,gi,pagi,afk,genshing]
 TOKEN = "NzQ5OTYzMTkxNTg4NDg3MjQ4.GVNSaf.SIA6heSx2u5W7TBPeo3hjSZgn5tZOl-TP8QQwo"
-client = commands.Bot(command_prefix = '$', intents = discord.Intents.all(), application_id=749963191588487248)
+client = commands.Bot(command_prefix = '$', intents = discord.Intents.all())
 
+for i in range(len(cogs)):
+  cogs[i].setup(client)
+@client.event
 async def on_ready():
-    await tree.sync(guild = discord.Object(id=526100423250149386))
-    self.synced = True
-    print("moshi moshi")
-        
-async def main():
-    async with client:
-        await client.start(TOKEN)            
-        
-client = client()
-tree = app_commands.CommandTree(client)
-
-@tree.command(name = 'klaim', description = 'Buat Klaim Badge', guild = discord.Object(id=526100423250149386))
-async def self(interaction: discord.Interaction, name: str):
-    await interaction.response.send_message(f"Hi {name} Thanks For Claiming")
-    
+  print("moshi moshi")
 @client.event
 async def on_member_join(member):
   guild = client.get_guild(526100423250149386)
@@ -62,7 +47,6 @@ async def on_member_join(member):
   embed.set_thumbnail(url = apatar)
   embed.set_footer(text = f"{membercount} Members")
   await sendmsg(embed=embed)
-
 @client.event
 async def on_member_remove(member):
   guild = client.get_guild(526100423250149386)
@@ -85,13 +69,11 @@ async def on_member_remove(member):
     title = "Member Left",
     description = f"User : {member}\n User ID : `({uid})`\n Bot : `{isit}`\n Akun Dibuat : `{delta} Hari yang lalu`",
     colour = discord.Colour.red()
-
   )
   embed.set_author(name = auth, icon_url = guildav)
   embed.set_thumbnail(url = apatar)
   embed.set_footer(text = f"{membercount} Members")
   await sendmsg(embed=embed)
-
 @client.event
 async def on_message_delete(message):
     channel = client.get_channel(922660132507238431)
@@ -110,7 +92,6 @@ async def on_message_delete(message):
       embed.set_author(name = auth, icon_url = guildav)
       embed.set_footer(text = f'#{message.channel}')
       await sendmsg(embed=embed)
-
 @client.event
 async def on_message_edit(message_before, message_after):
     channel = client.get_channel(922660132507238431)
@@ -129,11 +110,8 @@ async def on_message_edit(message_before, message_after):
       embed.set_author(name = auth, icon_url = guildav)
       embed.set_footer(text = f'#{message_before.channel}')
       await sendmsg(embed=embed)
-
-#@client.command()
-#async def purge(ctx, limit: int):
-#    await ctx.channel.purge(limit=limit)
-   
-
-
-asyncio.run(main())
+@client.command()
+async def purge(ctx, limit: int):
+    await ctx.channel.purge(limit=limit)
+    
+client.run(TOKEN)
