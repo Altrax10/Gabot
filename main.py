@@ -19,8 +19,9 @@ cogs=[status,musik,valo,echo,gi,pagi,afk]
 TOKEN = "NzQ5OTYzMTkxNTg4NDg3MjQ4.GVNSaf.SIA6heSx2u5W7TBPeo3hjSZgn5tZOl-TP8QQwo"
 client = commands.Bot(command_prefix = '$', intents = discord.Intents.all(), application_id=749963191588487248)
 
-async def load_extensions():
-    await client.load_extension(f"echo")
+async def setup_hook(self):
+    await self.load_extension(f'cogs.test'
+     await tree.synced(guild=discord.object(id=526100423250149386))
             
 async def main():
     async with client:
@@ -29,8 +30,6 @@ async def main():
 
 @client.event
 async def on_ready():
-  await tree.synced(guild=discord.object(id=526100423250149386))
-  self.synced = True
   print("moshi moshi")
 
 @client.event
@@ -133,7 +132,7 @@ async def purge(ctx, limit: int):
     await ctx.channel.purge(limit=limit)
     
 
-@tree.command(name="klaim", description="Buat Klaim Badge Dev",guild=discord.object(id=526100423250149386))
+@app_commands.command(name="klaim", description="Buat Klaim Badge Dev",guild=discord.object(id=526100423250149386))
 async def self(interation: discord.Interaction):
     await interation.response.send_message(f"Cek Statusmu Disini")
 
