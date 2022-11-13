@@ -38,7 +38,7 @@ async def on_ready():
         self.synced = True
     print("moshi moshi")
 
-client = aclient()
+#client = aclient()
 tree = app_commands.CommandTree(client)
 
 @tree.command(name = 'klaim', description = 'Buat Klaim Badge', guild = discord.Object(id=526100423250149386))
