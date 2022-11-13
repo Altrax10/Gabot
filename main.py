@@ -23,7 +23,7 @@ bot = client
 
 async def setup_hook(self):
     for extension in cogs:
-        await self.load_extension(extension)
+        await self.load_extension('cogs.echo')
         await tree.synced(guild=discord.object(id=526100423250149386))
             
 async def main():
