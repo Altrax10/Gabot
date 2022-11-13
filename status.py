@@ -35,4 +35,4 @@ class status(commands.Cog):
         await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="OnePiece"))
         
 def setup(client):
-  await client.add_cog(status(client))
+  client.add_cog(status(client))
