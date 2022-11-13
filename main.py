@@ -25,7 +25,6 @@ async def setup_hook(self):
             
 async def main():
     async with client:
-        await load_extensions()
         await client.start(TOKEN)
 
 @client.event
