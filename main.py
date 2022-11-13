@@ -17,8 +17,16 @@ cogs=[status,musik,valo,echo,gi,pagi,afk]
 TOKEN = "NzQ5OTYzMTkxNTg4NDg3MjQ4.GVNSaf.SIA6heSx2u5W7TBPeo3hjSZgn5tZOl-TP8QQwo"
 client = commands.Bot(command_prefix = '$', intents = discord.Intents.all())
 
-for i in range(len(cogs)):
-  cogs[i].setup(client)
+async def load_extensions():
+    for filename in os.listdir("./cogs"):
+        if filename.endswith(".py"):
+            # cut off the .py from the file name
+            await client.load_extension(f"cogs.{filename[:-3]}")
+            
+async def main():
+    async with client:
+        await load_extensions()
+        await client.start(TOKEN)
 
 @client.event
 async def on_ready():
@@ -128,4 +136,4 @@ async def purge(ctx, limit: int):
 #  await interaction.response.send_message(f"Cek Statusmu Disini")
     
 
-client.run(TOKEN)
+asyncio.run(main())
