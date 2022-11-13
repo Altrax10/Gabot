@@ -18,20 +18,18 @@ cogs=["cogs.echo"]
 
 TOKEN = "NzQ5OTYzMTkxNTg4NDg3MjQ4.GVNSaf.SIA6heSx2u5W7TBPeo3hjSZgn5tZOl-TP8QQwo"
 client = commands.Bot(command_prefix = '$', intents = discord.Intents.all(), application_id=749963191588487248)
-bot = client
 
+class aclient(discord.Client):
+    def __init__(self):
+        super().__init__(intents=discord.Intents.default())
+        self.sync = False
 
-    class aclient(discord.Client):
-        def __init__(self):
-            super().__init__(intents=discord.Intents.default())
-            self.sync = False
-
-        async def on_ready():
-            await self.wait_until_ready()
-            if not self.synced:
-                await tree.sync(guild = discord.Object(id=526100423250149386))
-                self.synced = True
-            print("moshi moshi")
+    async def on_ready():
+        await self.wait_until_ready()
+        if not self.synced:
+            await tree.sync(guild = discord.Object(id=526100423250149386))
+            self.synced = True
+        print("moshi moshi")
             
 async def main():
     async with client:
