@@ -34,8 +34,8 @@ async def on_ready():
 
 
 @app_commands.command(name="klaim", description="Buat Klaim Badge Dev",guild=discord.object(id=526100423250149386))
-    async def self(interation: discord.Interaction):
-        await interation.response.send_message(f"Cek Statusmu Disini")
+async def self(interation: discord.Interaction):
+    await interation.response.send_message(f"Cek Statusmu Disini")
 
 @client.event
 async def on_member_join(member):
