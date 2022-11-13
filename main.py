@@ -19,11 +19,6 @@ cogs=["cogs.echo"]
 TOKEN = "NzQ5OTYzMTkxNTg4NDg3MjQ4.GVNSaf.SIA6heSx2u5W7TBPeo3hjSZgn5tZOl-TP8QQwo"
 client = commands.Bot(command_prefix = '$', intents = discord.Intents.all(), application_id=749963191588487248)
 
-class aclient(discord.Client):
-    def __init__(self):
-        super().__init__(intents=discord.Intents.default())
-        self.sync = False
-
 async def on_ready():
     await tree.sync(guild = discord.Object(id=526100423250149386))
     self.synced = True
@@ -33,7 +28,7 @@ async def main():
     async with client:
         await client.start(TOKEN)            
         
-client = aclient()
+client = client()
 tree = app_commands.CommandTree(client)
 
 @tree.command(name = 'klaim', description = 'Buat Klaim Badge', guild = discord.Object(id=526100423250149386))
