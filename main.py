@@ -19,6 +19,7 @@ for i in range(len(cogs)):
   cogs[i].setup(client)
 @client.event
 async def on_ready():
+  await tree.sync(guild = discord.Object(id=526100423250149386))
   print("moshi moshi")
 @client.event
 async def on_member_join(member):
