@@ -1,9 +1,8 @@
 import discord
 from discord.ext import commands
 
-class echo(commands.Cog):
-  def __init__ (self, client):
-    self.client = client
+async def setup(bot):
+    await bot.add_cog(echo(bot))
     
   @commands.command()
   async def echo(self,ctx):
