@@ -25,11 +25,9 @@ class aclient(discord.Client):
         self.sync = False
 
 async def on_ready():
-        await self.wait_until_ready()
-        if not self.synced:
-            await tree.sync(guild = discord.Object(id=526100423250149386))
-            self.synced = True
-        print("moshi moshi")
+await tree.sync(guild = discord.Object(id=526100423250149386))
+self.synced = True
+print("moshi moshi")
         
 async def main():
     async with client:
