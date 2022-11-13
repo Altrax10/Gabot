@@ -17,15 +17,15 @@ import os
 cogs=[status,musik,valo,'cogs.echo',gi,pagi,afk]
 
 TOKEN = "NzQ5OTYzMTkxNTg4NDg3MjQ4.GVNSaf.SIA6heSx2u5W7TBPeo3hjSZgn5tZOl-TP8QQwo"
-client = commands.Bot(command_prefix = '$', intents = discord.Intents.all(), application_id=749963191588487248)
+bot = commands.Bot(command_prefix = '$', intents = discord.Intents.all(), application_id=749963191588487248)
 
 if __name__ == '__main__':
     for extension in cogs:
-        client.load_extension(extension)
+        bot.load_extension(extension)
 
-async def setup_hook(client):
-    await client.load_extension(f'echo')
-    await tree.synced(guild=discord.object(id=526100423250149386))
+#async def setup_hook(client):
+#    await client.load_extension(f'echo')
+#    await tree.synced(guild=discord.object(id=526100423250149386))
             
 async def main():
     async with client:
