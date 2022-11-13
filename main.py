@@ -10,7 +10,7 @@ import pagi
 #import chat
 import status  
 import afk
-import genshing
+#import genshing
 
 cogs=[status,musik,valo,echo,gi,pagi,afk,genshing]
 
