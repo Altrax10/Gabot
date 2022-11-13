@@ -22,7 +22,7 @@ bot = client
 
 
 class aclient(discord.client):
-    def __ini__(self):
+    def __init__(self):
         super().__init__(intents=discord.Intents.default())
         self.sync = False
         
