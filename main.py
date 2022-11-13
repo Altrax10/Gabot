@@ -23,7 +23,7 @@ class myclient(discord.Client):
   def __init__(self, *args, **kwargs):
     super().__init__(*args, **kwargs)
     
-  async def on_ready():
+  async def on_ready(self):
     await tree.sync(guild = discord.Object(id=526100423250149386))
     print("moshi moshi")
   
