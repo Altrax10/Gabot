@@ -1,8 +1,12 @@
 import discord
 from discord.ext import commands
-   
-@commands.command()
-async def echo(self,ctx):
+
+class echo(commands.Cog):
+  def __init__ (self, client):
+    self.client = client
+
+  @commands.command()
+  async def echo(self,ctx):
     client = self.client
     msg = ctx.message.content
     msg1 = msg[5:]
@@ -15,6 +19,5 @@ async def echo(self,ctx):
     await ctx.trigger_typing()
     await sendmsg(msg1)
     #await cek.add_reaction(reaction)
-
 async def setup(bot):
     await bot.add_cog(echo(bot))
