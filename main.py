@@ -1,4 +1,5 @@
 import discord
+from discord import app_commands
 from discord.ext import commands
 import musik
 import valo
@@ -121,6 +122,10 @@ async def on_message_edit(message_before, message_after):
 @client.command()
 async def purge(ctx, limit: int):
     await ctx.channel.purge(limit=limit)
+
+@app_commands.command(name="Klaim", description="Buat Klaim Badge Dev")
+async def Klaim(self, interaction: discord.Interaction):
+  await interaction.response.send_message(f'Cek Statusmu Disini : https://discord.com/developers/active-developer')
     
 
 client.run(TOKEN)
