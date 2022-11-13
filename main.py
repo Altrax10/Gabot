@@ -21,7 +21,7 @@ client = commands.Bot(command_prefix = '$', intents = discord.Intents.all(), app
 
 async def setup_hook(self):
     await self.load_extension(f'cogs.test'
-     await tree.synced(guild=discord.object(id=526100423250149386))
+    await tree.synced(guild=discord.object(id=526100423250149386))
             
 async def main():
     async with client:
