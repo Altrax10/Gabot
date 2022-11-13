@@ -31,7 +31,7 @@ class myclient(discord.Client):
 client = myclient(intents = discord.Intents.default())
 tree = app_commands.CommandTree(client)
 
-@tree.commands_command(name= "klaim", guild = discord.Object(id=526100423250149386))
+@tree.context_menu(name= "klaim", guild = discord.Object(id=526100423250149386))
 async def klaim(interaction : discord.Interaction, message : discord.Message):
   await interaction.response.send_message("TerKlaim")
   
