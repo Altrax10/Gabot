@@ -3,9 +3,8 @@ from discord.ext import commands
 
 async def setup(bot):
     await bot.add_cog(echo(bot))
-    
-  @commands.command()
-  async def echo(self,ctx):
+   
+async def echo(self,ctx):
     client = self.client
     msg = ctx.message.content
     msg1 = msg[5:]
