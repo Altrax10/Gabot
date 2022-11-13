@@ -33,7 +33,7 @@ async def on_ready():
   print("moshi moshi")
 
 
-@app_commands.command(name="klaim", description="Buat Klaim Badge Dev",guild=discord.object(id=526100423250149386))
+@client.command(name="klaim", description="Buat Klaim Badge Dev",guild=discord.object(id=526100423250149386))
 async def self(interation: discord.Interaction):
     await interation.response.send_message(f"Cek Statusmu Disini")
 
