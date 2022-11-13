@@ -131,7 +131,7 @@ async def purge(ctx, limit: int):
     await ctx.channel.purge(limit=limit)
 
 @app_commands.command(name="klaim", description="Buat Klaim Badge Dev")
-async def klaim(client, interaction:discord.interaction):
+async def klaim(client, interaction:discord.Interaction):
   await interaction.response.send_message(f"Cek Statusmu Disini")
     
 
