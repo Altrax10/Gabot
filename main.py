@@ -14,14 +14,14 @@ import afk
 import asyncio 
 import os
 
-cogs=['.echo']
+cogs=["cogs.echo"]
 
 TOKEN = "NzQ5OTYzMTkxNTg4NDg3MjQ4.GVNSaf.SIA6heSx2u5W7TBPeo3hjSZgn5tZOl-TP8QQwo"
 client = commands.Bot(command_prefix = '$', intents = discord.Intents.all(), application_id=749963191588487248)
 bot = client
 if __name__ == '__main__':
     for extension in cogs:
-        bot.load_extension(extension)
+        await bot.load_extension(extension)
 
 #async def setup_hook(client):
 #    await client.load_extension(f'echo')
