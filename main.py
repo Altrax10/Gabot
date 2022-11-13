@@ -20,7 +20,7 @@ TOKEN = "NzQ5OTYzMTkxNTg4NDg3MjQ4.GVNSaf.SIA6heSx2u5W7TBPeo3hjSZgn5tZOl-TP8QQwo"
 client = commands.Bot(command_prefix = '$', intents = discord.Intents.all())
 
 async def load_extensions():
-    await client.load_extension(f"cogs.echo")
+    await client.load_extension(f"echo")
             
 async def main():
     async with client:
