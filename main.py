@@ -24,17 +24,18 @@ class aclient(discord.Client):
         super().__init__(intents=discord.Intents.default())
         self.sync = False
 
-    async def on_ready():
+async def main():
+    async with client:
+        await client.start(TOKEN)
+   
+async def on_ready():
         await self.wait_until_ready()
         if not self.synced:
             await tree.sync(guild = discord.Object(id=526100423250149386))
             self.synced = True
         print("moshi moshi")
             
-async def main():
-    async with client:
-        await client.start(TOKEN)
-
+        
 client = aclient()
 tree = app_commands.CommandTree(client)
 
