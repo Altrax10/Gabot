@@ -21,7 +21,7 @@ client = commands.Bot(command_prefix = '$', intents = discord.Intents.all(), app
 
 if __name__ == '__main__':
     for extension in cogs:
-        bot.load_extension(extension)
+        client.load_extension(extension)
 
 async def setup_hook(client):
     await client.load_extension(f'echo')
