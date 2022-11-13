@@ -123,8 +123,8 @@ async def on_message_edit(message_before, message_after):
 async def purge(ctx, limit: int):
     await ctx.channel.purge(limit=limit)
 
-@app_commands.command(name="Klaim", description="Buat Klaim Badge Dev")
-async def Klaim(self, interaction: discord.Interaction):
+@app_commands.command(name="klaim", description="Buat Klaim Badge Dev")
+async def klaim(self, interaction: discord.Interaction):
   await interaction.response.send_message(f'Cek Statusmu Disini : https://discord.com/developers/active-developer')
     
 
