@@ -15,12 +15,24 @@ cogs=[status,musik,valo,echo,gi,pagi,afk]
 TOKEN = "NzQ5OTYzMTkxNTg4NDg3MjQ4.GVNSaf.SIA6heSx2u5W7TBPeo3hjSZgn5tZOl-TP8QQwo"
 client = commands.Bot(command_prefix = '$', intents = discord.Intents.all())
 
-for i in range(len(cogs)):
-  cogs[i].setup(client)
-@client.event
-async def on_ready():
-  await tree.sync(guild = discord.Object(id=526100423250149386))
-  print("moshi moshi")
+#for i in range(len(cogs)):
+#  cogs[i].setup(client)
+
+class myclient(discord.Client)
+  def __init__(self, *args, **kwargs):
+    super().__init__(*args, **kwargs)
+    
+  async def on_ready():
+    await tree.sync(guild = discord.Object(id=526100423250149386))
+    print("moshi moshi")
+  
+client = myclient(intents = discord.Intents.default())
+tree = app_commands.CommandTree(client)
+
+@tree.context_menu(name= "klaim", guild = discord.Object(id=526100423250149386))
+async def klaim(interaction : discord.Interaction, message : discord.Message):
+  await interaction.response.send_message("TerKlaim")
+  
 @client.event
 async def on_member_join(member):
   guild = client.get_guild(526100423250149386)
