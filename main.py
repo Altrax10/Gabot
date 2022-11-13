@@ -21,10 +21,10 @@ client = commands.Bot(command_prefix = '$', intents = discord.Intents.all(), app
 bot = client
 
 
-async def setup_hook(self):
-    for extension in cogs:
-        await self.load_extension(f'cogs.echo')
-        await tree.synced(guild=discord.object(id=526100423250149386))
+class aclient(discord.client):
+    def __ini__(self):
+        super().__init__(intents=discord.Intents.default())
+        self.sync = False
             
 async def main():
     async with client:
@@ -32,9 +32,19 @@ async def main():
 
 @client.event
 async def on_ready():
-  print("moshi moshi")
+    await self.wait_until_ready()
+    if not self.synced:
+        await tree.sync(guild = discord.Object(id=526100423250149386))
+        self.synced = True
+    print("moshi moshi")
 
+client = aclient()
+tree = app_commands.CommandTree(client)
 
+@tree.command(name = 'klaim', description = 'Buat Klaim Badge', guild = discord.Object(id=526100423250149386))
+async def self(interaction: discord.Interaction, name: str):
+    await interaction.response.send_message(f"Hi {name} Thanks For Claiming")
+    
 @client.event
 async def on_member_join(member):
   guild = client.get_guild(526100423250149386)
