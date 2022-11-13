@@ -17,8 +17,8 @@ import os
 cogs=[status,musik,valo,'cogs.echo',gi,pagi,afk]
 
 TOKEN = "NzQ5OTYzMTkxNTg4NDg3MjQ4.GVNSaf.SIA6heSx2u5W7TBPeo3hjSZgn5tZOl-TP8QQwo"
-bot = commands.Bot(command_prefix = '$', intents = discord.Intents.all(), application_id=749963191588487248)
-
+client = commands.Bot(command_prefix = '$', intents = discord.Intents.all(), application_id=749963191588487248)
+bot = client
 if __name__ == '__main__':
     for extension in cogs:
         bot.load_extension(extension)
