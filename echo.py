@@ -1,8 +1,5 @@
 import discord
 from discord.ext import commands
-
-async def setup(bot):
-    await bot.add_cog(echo(bot))
    
 @commands.command()
 async def echo(self,ctx):
@@ -19,6 +16,5 @@ async def echo(self,ctx):
     await sendmsg(msg1)
     #await cek.add_reaction(reaction)
 
-
-def setup(client):
-  client.add_cog(echo(client))
+async def setup(bot):
+    await bot.add_cog(echo(bot))
