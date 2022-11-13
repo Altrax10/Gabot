@@ -14,7 +14,7 @@ import afk
 
 cogs=[status,musik,valo,echo,gi,pagi,afk]
 TOKEN = "NzQ5OTYzMTkxNTg4NDg3MjQ4.GVNSaf.SIA6heSx2u5W7TBPeo3hjSZgn5tZOl-TP8QQwo"
-client = commands.Bot(command_prefix = '$', intents = discord.Intents.all())
+clientku = commands.Bot(command_prefix = '$', intents = discord.Intents.all())
 
 #for i in range(len(cogs)):
 #  cogs[i].setup(client)
@@ -124,7 +124,7 @@ async def on_message_edit(message_before, message_after):
       embed.set_author(name = auth, icon_url = guildav)
       embed.set_footer(text = f'#{message_before.channel}')
       await sendmsg(embed=embed)
-@client.command()
+@clientku.command()
 async def purge(ctx, limit: int):
     await ctx.channel.purge(limit=limit)
     
