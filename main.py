@@ -21,7 +21,7 @@ client = commands.Bot(command_prefix = '$', intents = discord.Intents.all(), app
 bot = client
 
 
-class aclient(discord.client):
+class aclient(discord.Client):
     def __init__(self):
         super().__init__(intents=discord.Intents.default())
         self.sync = False
