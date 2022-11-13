@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 
 async def setup(bot):
-    await bot.add_cog(cogs(bot))
+    await bot.add_cog(echo(bot))
    
 async def echo(self,ctx):
     client = self.client
