@@ -11,6 +11,7 @@ import pagi
 import status  
 import afk
 #import genshing
+import asyncio 
 
 cogs=[status,musik,valo,echo,gi,pagi,afk]
 
