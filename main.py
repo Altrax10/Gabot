@@ -132,7 +132,6 @@ async def on_message_edit(message_before, message_after):
 async def purge(ctx, limit: int):
     await ctx.channel.purge(limit=limit)
     
-client = abot()
 tree = app_commands.CommandTree(client)
 
 @tree.command(name="klaim", description="Buat Klaim Badge Dev",guild=discord.object(id=526100423250149386))
