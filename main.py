@@ -39,8 +39,6 @@ async def my_first_command(ctx: interactions.CommandContext):
     """This is the first command I made!"""
     await ctx.send("Hi there!")
 
-bot.start() 
-  
 clientku = myclient(intents = discord.Intents.default())
 tree = app_commands.CommandTree(clientku)
 bot = commands.Bot
