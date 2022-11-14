@@ -15,7 +15,7 @@ import afk
 
 cogs=[status,musik,valo,echo,gi,pagi,afk]
 TOKEN = "NzQ5OTYzMTkxNTg4NDg3MjQ4.GVNSaf.SIA6heSx2u5W7TBPeo3hjSZgn5tZOl-TP8QQwo"
-clientku = commands.Bot(command_prefix = '$', intents = discord.Intents.all())
+client = commands.Bot(command_prefix = '$', intents = discord.Intents.all())
 
 #for i in range(len(cogs)):
 #  cogs[i].setup(client)
@@ -27,13 +27,13 @@ class myclient(discord.Client):
     await tree.sync(guild = discord.Object(id=526100423250149386))
     print("moshi moshi")
   
-client = myclient(intents = discord.Intents.default())
-tree = app_commands.CommandTree(client)
+clientku = myclient(intents = discord.Intents.default())
+tree = app_commands.CommandTree(clientku)
 @tree.context_menu(name= "klaim", guild = discord.Object(id=526100423250149386))
 async def klaim(interaction : discord.Interaction, message : discord.Message):
   await interaction.response.send_message("TerKlaim")
   
-@commands.command()
+@client.command()
 async def sync(self,ctx):
   await tree.sync(guild = discord.Object(id=526100423250149386))
   await ctx.send("synced")
@@ -129,7 +129,7 @@ async def on_message_edit(message_before, message_after):
       embed.set_footer(text = f'#{message_before.channel}')
       await sendmsg(embed=embed)
       
-@commands.command()
+@client.command()
 async def purge(ctx, limit: int):
     await ctx.channel.purge(limit=limit)
 
