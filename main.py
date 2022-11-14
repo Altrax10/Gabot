@@ -22,12 +22,6 @@ client = commands.Bot(command_prefix = '$', intents = discord.Intents.all())
 #  cogs[i].setup(client)
 async def on_ready(self):
   print("moshi moshi")
-    
-class myclient(discord.Client):
-  def __init__(self, *args, **kwargs):
-    super().__init__(*args, **kwargs)
-    
-
 
 bot = interactions.Client(
     token=TOKEN,
@@ -35,13 +29,10 @@ bot = interactions.Client(
 )
 
 @bot.command()
-async def my_first_command(ctx: interactions.CommandContext):
+async def my_first_command(name:'my_first_command' ,ctx: interactions.CommandContext):
     """This is the first command I made!"""
     await ctx.send("Hi there!")
 
-clientku = myclient(intents = discord.Intents.default())
-tree = app_commands.CommandTree(clientku)
-bot = commands.Bot
 
 @app_commands.command(name= "klaim")
 async def klaim(interaction : discord.Interaction):
