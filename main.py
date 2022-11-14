@@ -16,6 +16,7 @@ import afk
 cogs=[status,musik,valo,echo,gi,pagi,afk]
 TOKEN = "NzQ5OTYzMTkxNTg4NDg3MjQ4.GVNSaf.SIA6heSx2u5W7TBPeo3hjSZgn5tZOl-TP8QQwo"
 client = commands.Bot(command_prefix = '$', intents = discord.Intents.all())
+bot = commands.Bot
 
 #for i in range(len(cogs)):
 #  cogs[i].setup(client)
@@ -24,7 +25,6 @@ class myclient(discord.Client):
     super().__init__(*args, **kwargs)
     
   async def on_ready(self):
-    await ctx.client.sync(guild = discord.Object(id=526100423250149386))
     print("moshi moshi")
   
 clientku = myclient(intents = discord.Intents.default())
@@ -35,7 +35,7 @@ async def klaim(interaction : discord.Interaction, message : discord.Message):
   
 @client.command()
 async def sync(self,ctx):
-  await ctx.client.tree.sync()
+  await ctx.bot.tree.sync()
   await ctx.send("synced")
  
 @client.event
