@@ -33,7 +33,7 @@ tree = app_commands.CommandTree(client)
 async def klaim(interaction : discord.Interaction, message : discord.Message):
   await interaction.response.send_message("TerKlaim")
   
-@clientku.command()
+@commands.command()
 async def sync(self,ctx):
   await tree.sync(guild = discord.Object(id=526100423250149386))
   await ctx.send("synced")
@@ -129,7 +129,7 @@ async def on_message_edit(message_before, message_after):
       embed.set_footer(text = f'#{message_before.channel}')
       await sendmsg(embed=embed)
       
-@clientku.command()
+@commands.command()
 async def purge(ctx, limit: int):
     await ctx.channel.purge(limit=limit)
 
