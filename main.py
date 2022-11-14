@@ -28,9 +28,9 @@ bot = interactions.Client(
     default_scope=526100423250149386,
 )
 clientku = discord.Client(intents=discord.Intents.all())
-bot = app_commands.CommandTree(clientku)
+botku = app_commands.CommandTree(clientku)
 
-@bot.command()
+@botku.command()
 async def my_first_command(ctx: interactions.CommandContext):
     """This is the first command I made!"""
     await ctx.send("Hi there!")
