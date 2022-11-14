@@ -20,7 +20,7 @@ client = commands.Bot(command_prefix = '$', intents = discord.Intents.all())
 
 #for i in range(len(cogs)):
 #  cogs[i].setup(client)
-async def on_ready(self):
+async def on_ready():
   print("moshi moshi")
 
 bot = interactions.Client(
@@ -31,7 +31,7 @@ client = discord.Client(intents=discord.Intents.all())
 bot = app_commands.CommandTree(client)
 
 @bot.command()
-async def my_first_command(name:'my_first_command' ,ctx: interactions.CommandContext):
+async def my_first_command(ctx: interactions.CommandContext):
     """This is the first command I made!"""
     await ctx.send("Hi there!")
 
