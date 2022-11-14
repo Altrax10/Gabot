@@ -24,7 +24,7 @@ class myclient(discord.Client):
     super().__init__(*args, **kwargs)
     
   async def on_ready(self):
-    await tree.sync(guild = discord.Object(id=526100423250149386))
+    await ctx.client.sync(guild = discord.Object(id=526100423250149386))
     print("moshi moshi")
   
 clientku = myclient(intents = discord.Intents.default())
