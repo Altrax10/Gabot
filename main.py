@@ -34,7 +34,7 @@ async def klaim(interaction : discord.Interaction, message : discord.Message):
   await interaction.response.send_message("TerKlaim")
   
 @clientku.command()
-async def sync(ctx):
+async def sync(self,ctx):
   await tree.sync(guild = discord.Object(id=526100423250149386))
   await ctx.send("synced")
  
