@@ -12,6 +12,7 @@ import pagi
 import status  
 import afk
 #import genshing
+import interactions
 
 cogs=[status,musik,valo,echo,gi,pagi,afk]
 TOKEN = "NzQ5OTYzMTkxNTg4NDg3MjQ4.GVNSaf.SIA6heSx2u5W7TBPeo3hjSZgn5tZOl-TP8QQwo"
@@ -26,7 +27,19 @@ class myclient(discord.Client):
   def __init__(self, *args, **kwargs):
     super().__init__(*args, **kwargs)
     
- 
+
+
+bot = interactions.Client(
+    token=TOKEN,
+    default_scope=526100423250149386,
+)
+
+@bot.command()
+async def my_first_command(ctx: interactions.CommandContext):
+    """This is the first command I made!"""
+    await ctx.send("Hi there!")
+
+bot.start() 
   
 clientku = myclient(intents = discord.Intents.default())
 tree = app_commands.CommandTree(clientku)
