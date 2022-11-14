@@ -32,7 +32,7 @@ clientku = myclient(intents = discord.Intents.default())
 tree = app_commands.CommandTree(clientku)
 bot = commands.Bot
 
-@app_commands.command(name= "klaim", guild = discord.Object(id=526100423250149386))
+@app_commands.command(name= "klaim")
 async def klaim(interaction : discord.Interaction, message : discord.Message):
   await interaction.response.send_message("TerKlaim")
   
