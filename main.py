@@ -35,7 +35,7 @@ async def klaim(interaction : discord.Interaction, message : discord.Message):
   
 @client.command()
 async def sync(self,ctx):
-  await ctx.client.tree.sync(guild = discord.Object(id=526100423250149386))
+  await ctx.bot.tree.sync(guild = discord.Object(id=526100423250149386))
   await ctx.send("synced")
  
 @client.event
