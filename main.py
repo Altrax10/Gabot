@@ -33,7 +33,7 @@ tree = app_commands.CommandTree(clientku)
 bot = commands.Bot
 
 @app_commands.command(name= "klaim")
-async def klaim(interaction : discord.Interaction, message : discord.Message):
+async def klaim(interaction : discord.Interaction):
   await interaction.response.send_message("TerKlaim")
   
 @client.command()
