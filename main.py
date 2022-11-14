@@ -27,8 +27,8 @@ bot = interactions.Client(
     token=TOKEN,
     default_scope=526100423250149386,
 )
-client = discord.Client(intents=discord.Intents.all())
-bot = app_commands.CommandTree(client)
+clientku = discord.Client(intents=discord.Intents.all())
+bot = app_commands.CommandTree(clientku)
 
 @bot.command()
 async def my_first_command(ctx: interactions.CommandContext):
