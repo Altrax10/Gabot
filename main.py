@@ -35,7 +35,7 @@ async def klaim(interaction : discord.Interaction, message : discord.Message):
   await interaction.response.send_message("TerKlaim")
   
 @client.command()
-async def sync(self,ctx):
+async def sync(ctx):
   await ctx.bot.tree.sync()
   await ctx.send("synced")
  
