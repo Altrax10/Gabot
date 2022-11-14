@@ -16,7 +16,7 @@ import afk
 cogs=[status,musik,valo,echo,gi,pagi,afk]
 TOKEN = "NzQ5OTYzMTkxNTg4NDg3MjQ4.GVNSaf.SIA6heSx2u5W7TBPeo3hjSZgn5tZOl-TP8QQwo"
 client = commands.Bot(command_prefix = '$', intents = discord.Intents.all())
-bot = commands.Bot
+self.bot = commands.Bot
 
 #for i in range(len(cogs)):
 #  cogs[i].setup(client)
