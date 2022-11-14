@@ -19,12 +19,14 @@ client = commands.Bot(command_prefix = '$', intents = discord.Intents.all())
 
 #for i in range(len(cogs)):
 #  cogs[i].setup(client)
+async def on_ready(self):
+  print("moshi moshi")
+    
 class myclient(discord.Client):
   def __init__(self, *args, **kwargs):
     super().__init__(*args, **kwargs)
     
-  async def on_ready(self):
-    print("moshi moshi")
+ 
   
 clientku = myclient(intents = discord.Intents.default())
 tree = app_commands.CommandTree(clientku)
@@ -36,7 +38,7 @@ async def klaim(interaction : discord.Interaction, message : discord.Message):
   
 @client.command()
 async def sync(ctx):
-  await ctx.bot.tree.sync()
+  await ctx.bot.tree.sync(guild = discord.Object(id=526100423250149386))
   await ctx.send("synced")
  
 @client.event
