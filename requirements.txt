@@ -19,7 +19,7 @@ genshinstats==1.4.11.3
 h11==0.12.0
 idna==3.3
 importlib-metadata==4.11.1
-interactions==4.3.4
+interactions.py==4.3.4
 itsdangerous==2.0.1
 jeepney==0.7.1
 Jinja2==3.0.3
