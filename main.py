@@ -49,7 +49,7 @@ async def on_member_join(member):
   apatar = member.avatar
   uid = member.id
   auth = member.guild.name
-  guildav = member.guild.icon_url
+  guildav = member.guild.icon
   membercount = guild.member_count
   isit = member.bot
   test = member.created_at.strftime("%j")
@@ -66,14 +66,14 @@ async def on_member_join(member):
     description = f"User : {member}\n User ID : `({uid})`\n Bot : `{isit}`\n Akun Dibuat : `{delta} Hari yang lalu`",
     colour = discord.Colour.green(),
   )
-  embed.set_author(name = auth, icon_url = guildav)
+  embed.set_author(name = auth, icon = guildav)
   embed.set_thumbnail(url = apatar)
   embed.set_footer(text = f"{membercount} Members")
   await sendmsg(embed=embed)
 @client.event
 async def on_member_remove(member):
   guild = client.get_guild(526100423250149386)
-  apatar = member.avatar_url
+  apatar = member.avatar
   uid = member.id
   auth = member.guild.name
   guildav = member.guild.icon_url
