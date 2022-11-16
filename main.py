@@ -41,13 +41,7 @@ async def klaim(ctx: interactions.CommandContext):
     await ctx.response.send_message("Terklaim")
 
 
-clientku = discord.Client(intents=discord.Intents.all())
-tree = app_commands.CommandTree(clientku)
-  
-@client.command(pass_context=True)
-async def sync(ctx):
-  await client.tree.sync()
-  await ctx.response.send_message(f"synced")
+
  
 @client.event
 async def on_member_join(member):
