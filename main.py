@@ -16,10 +16,11 @@ import interactions
 
 cogs=[status,musik,valo,echo,gi,pagi,afk]
 TOKEN = "NzQ5OTYzMTkxNTg4NDg3MjQ4.GVNSaf.SIA6heSx2u5W7TBPeo3hjSZgn5tZOl-TP8QQwo"
-client = commands.Bot(command_prefix = '$')
+client = commands.Bot(command_prefix = '$', intents=discord.Intents.all())
 
 #for i in range(len(cogs)):
 #  cogs[i].setup(client)
+@client.event
 async def on_ready():
   print("moshi moshi")
 
@@ -27,7 +28,7 @@ bot = interactions.Client(
     token=TOKEN,
     default_scope=526100423250149386,
 )
-clientku = discord.Client(intents=discord.Intents.all())
+clientku = discord.Client()
 botku = app_commands.CommandTree(clientku)
 
 @botku.command()
