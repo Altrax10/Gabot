@@ -19,15 +19,16 @@ TOKEN = "NzQ5OTYzMTkxNTg4NDg3MjQ4.GVNSaf.SIA6heSx2u5W7TBPeo3hjSZgn5tZOl-TP8QQwo"
 client = commands.Bot(command_prefix = '$', intents=discord.Intents.all())
 
 #for i in range(len(cogs)):
-#  cogs[i].setup(client)
-@client.event
-async def on_ready():
-  await tree.sync(guild=discord.Object(id=526100423250149386))
-  print("moshi moshi")
+#  cogs[i].setup(client
 
 intents = discord.Intents.default()
 clientku = discord.Client(intents=intents)
 tree = app_commands.CommandTree(clientku)
+
+@client.event
+async def on_ready():
+  await tree.sync(guild=discord.Object(id=526100423250149386))
+  print("moshi moshi")
 
 @tree.command(name = "test", description = "My first application Command", guild=discord.Object(id=526100423250149386)) #Add the guild ids in which the slash command will appear. If it should be in all, remove the argument, but note that it will take some time (up to an hour) to register the command if it's for all guilds.
 async def first_command(interaction):
@@ -39,7 +40,7 @@ async def klaim(interaction : discord.Interaction):
   
 @client.command()
 async def sync(ctx):
-  await ctx.bot.tree.sync(guild = discord.Object(id=526100423250149386))
+  await ctx.tree.sync(guild = discord.Object(id=526100423250149386))
   await ctx.send("synced")
  
 @client.event
