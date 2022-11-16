@@ -38,7 +38,7 @@ bot = interactions.Client(token=TOKEN)
     description="klaim badge dev",
 )
 async def klaim(ctx: interactions.CommandContext):
-    await interaction.response.send_message("Terklaim")
+    await ctx.response.send_message("Terklaim")
 
 
 clientku = discord.Client(intents=discord.Intents.all())
