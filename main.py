@@ -33,7 +33,7 @@ async def on_ready():
 
 bot = interactions.Client(token=TOKEN)
 
-@bot.tree.command(
+@client.tree.command(
     name="klaim",
     description="klaim badge dev",
     scope=526100423250149386,
