@@ -29,10 +29,10 @@ bot = interactions.Client(
     default_scope=526100423250149386,
 )
 clientku = discord.Client(intents=discord.Intents.all())
-botku = app_commands.CommandTree(clientku)
+bot = app_commands.CommandTree(clientku)
 
-@botku.command()
-async def my_first_command(ctx: interactions.CommandContext):
+@bot.command()
+async def test(ctx: interactions.CommandContext):
     """This is the first command I made!"""
     await ctx.send("Hi there!")
 
@@ -43,7 +43,7 @@ async def klaim(interaction : discord.Interaction):
   
 @client.command()
 async def sync(ctx):
-  await ctx.botku.tree.sync(guild = discord.Object(id=526100423250149386))
+  await ctx.bot.tree.sync(guild = discord.Object(id=526100423250149386))
   await ctx.send("synced")
  
 @client.event
