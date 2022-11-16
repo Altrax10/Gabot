@@ -33,17 +33,14 @@ async def on_ready():
 
 bot = interactions.Client(token=TOKEN)
 
-@bot.command(
-    name="kalim",
+@bot.tree.command(
+    name="klaim",
     description="klaim badge dev",
     scope=526100423250149386,
 )
-async def my_first_command(ctx: interactions.CommandContext):
-    await ctx.send("Hi there!")
+async def klaim(ctx: interactions.CommandContext):
+    await ctx.send("Terklaim")
 
-@app_commands.command(name= "klaim")
-async def klaim(interaction : discord.Interaction):
-  await interaction.response.send_message("TerKlaim")
 
 clientku = discord.Client(intents=discord.Intents.all())
 tree = app_commands.CommandTree(clientku)
