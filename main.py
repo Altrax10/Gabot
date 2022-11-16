@@ -46,7 +46,7 @@ async def klaim(ctx: interactions.CommandContext):
 @client.event
 async def on_member_join(member):
   guild = client.get_guild(526100423250149386)
-  apatar = member.avatar_url
+  apatar = member.avatar.url
   uid = member.id
   auth = member.guild.name
   guildav = member.guild.icon_url
