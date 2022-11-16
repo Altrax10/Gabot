@@ -39,10 +39,13 @@ async def my_first_command(ctx: interactions.CommandContext):
 @app_commands.command(name= "klaim")
 async def klaim(interaction : discord.Interaction):
   await interaction.response.send_message("TerKlaim")
+
+client = discord.Client(intents=intents)
+tree = app_commands.CommandTree(client)
   
 @client.command()
 async def sync(ctx):
-  await bot.tree.sync(guild = discord.Object(id=526100423250149386))
+  await tree.sync(guild = discord.Object(id=526100423250149386))
   await ctx.send("synced")
  
 @client.event
