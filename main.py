@@ -26,8 +26,8 @@ async def on_ready():
   print("moshi moshi")
 
 intents = discord.Intents.default()
-client = discord.Client(intents=intents)
-tree = app_commands.CommandTree(client)
+clientku = discord.Client(intents=intents)
+tree = app_commands.CommandTree(clientku)
 
 @tree.command(name = "test", description = "My first application Command", guild=discord.Object(id=526100423250149386)) #Add the guild ids in which the slash command will appear. If it should be in all, remove the argument, but note that it will take some time (up to an hour) to register the command if it's for all guilds.
 async def first_command(interaction):
