@@ -32,7 +32,7 @@ clientku = discord.Client(intents=discord.Intents.all())
 botku = app_commands.CommandTree(clientku)
 
 @botku.command()
-async def test(ctx: interactions.CommandContext):
+async def my_first_command(ctx: interactions.CommandContext):
     """This is the first command I made!"""
     await ctx.send("Hi there!")
 
