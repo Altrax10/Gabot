@@ -24,15 +24,9 @@ client = commands.Bot(command_prefix = '$', intents=discord.Intents.all())
 async def on_ready():
   print("moshi moshi")
 
-bot = interactions.Client(
-    token=TOKEN,
-    default_scope=526100423250149386,
-)
-
-@bot.command()
-async def test(self,ctx: interactions.CommandContext):
-    """This is the first command I made!"""
-    await ctx.send("Hi there!")
+@client.tree.command()
+async def my_command(interaction: discord.Interaction) -> None:
+  await interaction.response.send_message("Hello from my command!")
 
 
 @app_commands.command(name= "klaim")
