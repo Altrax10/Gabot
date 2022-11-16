@@ -66,7 +66,7 @@ async def on_member_join(member):
     description = f"User : {member}\n User ID : `({uid})`\n Bot : `{isit}`\n Akun Dibuat : `{delta} Hari yang lalu`",
     colour = discord.Colour.green(),
   )
-  embed.set_author(name = auth, icon.url = guildav)
+  embed.set_author(name = auth, icon_url = guildav)
   embed.set_thumbnail(url = apatar)
   embed.set_footer(text = f"{membercount} Members")
   await sendmsg(embed=embed)
