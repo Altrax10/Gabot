@@ -25,6 +25,11 @@ client = commands.Bot(command_prefix = '$', intents=discord.Intents.all())
 @client.event
 async def on_ready():
     print("moshi moshi")
+    try:
+        synced = await client.tree.sync()
+        print(f'Synced {len(synced)} command(s)'
+    except Exception as e:
+        print(e)
 
 bot = interactions.Client(token=TOKEN)
 
