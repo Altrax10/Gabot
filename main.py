@@ -21,14 +21,20 @@ client = commands.Bot(command_prefix = '$', intents=discord.Intents.all())
 #for i in range(len(cogs)):
 #  cogs[i].setup(client
 
-intents = discord.Intents.default()
-clientku = discord.Client(intents=intents)
-tree = app_commands.CommandTree(clientku)
 
-#@client.event
-#async def on_ready():
-# await tree.sync(guild=discord.Object(id=526100423250149386))
-#  print("moshi moshi")
+@client.event
+async def on_ready():
+    print("moshi moshi")
+
+bot = interactions.Client(token=TOKEN)
+
+@bot.command(
+    name="kalim",
+    description="klaim badge dev",
+    scope=526100423250149386,
+)
+async def my_first_command(ctx: interactions.CommandContext):
+    await ctx.send("Hi there!")
 
 @tree.command(name = "test", description = "My first application Command", guild=discord.Object(id=526100423250149386)) #Add the guild ids in which the slash command will appear. If it should be in all, remove the argument, but note that it will take some time (up to an hour) to register the command if it's for all guilds.
 async def first_command(interaction):
@@ -137,11 +143,5 @@ async def on_message_edit(message_before, message_after):
 @client.command()
 async def purge(ctx, limit: int):
     await ctx.channel.purge(limit=limit)
-
-@client.event
-async def on_ready():
-    await tree.sync(guild=discord.Object(id=526100423250149386))
-    print("Ready!")
-
 
 client.run(TOKEN)
