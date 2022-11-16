@@ -30,7 +30,7 @@ bot = interactions.Client(
 )
 
 @bot.command()
-async def test(ctx: interactions.CommandContext):
+async def test(self,ctx: interactions.CommandContext):
     """This is the first command I made!"""
     await ctx.send("Hi there!")
 
