@@ -40,7 +40,7 @@ async def my_first_command(ctx: interactions.CommandContext):
 async def klaim(interaction : discord.Interaction):
   await interaction.response.send_message("TerKlaim")
 
-client = discord.Client(intents=intents)
+client = discord.Client(intents=discord.Intents.all())
 tree = app_commands.CommandTree(client)
   
 @client.command()
