@@ -25,8 +25,8 @@ intents = discord.Intents.default()
 clientku = discord.Client(intents=intents)
 tree = app_commands.CommandTree(clientku)
 
-@client.event
-async def on_ready():
+#@client.event
+#async def on_ready():
 # await tree.sync(guild=discord.Object(id=526100423250149386))
   print("moshi moshi")
 
@@ -137,5 +137,11 @@ async def on_message_edit(message_before, message_after):
 @client.command()
 async def purge(ctx, limit: int):
     await ctx.channel.purge(limit=limit)
+
+@client.event
+async def on_ready():
+    await tree.sync(guild=discord.Object(id=526100423250149386))
+    print("Ready!")
+
 
 client.run(TOKEN)
