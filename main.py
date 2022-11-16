@@ -47,7 +47,7 @@ tree = app_commands.CommandTree(clientku)
 @client.command(pass_context=True)
 async def sync(ctx):
   await tree.sync(guild = discord.Object(id=526100423250149386))
-  await ctx.send("synced")
+  await interaction.response.send_message(f"synced")
  
 @client.event
 async def on_member_join(member):
