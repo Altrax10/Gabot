@@ -76,7 +76,7 @@ async def on_member_remove(member):
   apatar = member.avatar
   uid = member.id
   auth = member.guild.name
-  guildav = member.guild.icon_url
+  guildav = member.guild.icon
   membercount = guild.member_count
   test = member.created_at.strftime("%j")
   test1 = datetime.now()
