@@ -38,7 +38,7 @@ bot = interactions.Client(token=TOKEN)
     description="klaim badge dev",
 )
 async def klaim(ctx: interactions.CommandContext):
-    await ctx.response.send_message("Terklaim")
+    await ctx.response.send_message("Terklaim cek status mu disini : http://discord.com/developers/active-developer")
 
 
 
@@ -46,7 +46,7 @@ async def klaim(ctx: interactions.CommandContext):
 @client.event
 async def on_member_join(member):
   guild = client.get_guild(526100423250149386)
-  apatar = member.avatar.url
+  apatar = member.avatar
   uid = member.id
   auth = member.guild.name
   guildav = member.guild.icon_url
