@@ -43,7 +43,7 @@ async def klaim(interaction : discord.Interaction):
 clientku = discord.Client(intents=discord.Intents.all())
 tree = app_commands.CommandTree(clientku)
   
-@client.command()
+@client.command(pass_context=True)
 async def sync(ctx):
   await tree.sync(guild = discord.Object(id=526100423250149386))
   await ctx.send("synced")
