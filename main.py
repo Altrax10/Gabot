@@ -47,7 +47,7 @@ tree = app_commands.CommandTree(clientku)
 @client.command(pass_context=True)
 async def sync(ctx):
   await client.tree.sync()
-  await interaction.response.send_message(f"synced")
+  await ctx.response.send_message(f"synced")
  
 @client.event
 async def on_member_join(member):
