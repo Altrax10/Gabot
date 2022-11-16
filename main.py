@@ -36,7 +36,6 @@ bot = interactions.Client(token=TOKEN)
 @client.tree.command(
     name="klaim",
     description="klaim badge dev",
-    scope=526100423250149386,
 )
 async def klaim(ctx: interactions.CommandContext):
     await ctx.send("Terklaim")
