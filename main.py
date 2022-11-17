@@ -40,6 +40,15 @@ bot = interactions.Client(token=TOKEN)
 async def klaim(ctx: interactions.CommandContext):
     await ctx.response.send_message("Terklaim cek status mu disini : http://discord.com/developers/active-developer")
 
+    
+ @client.tree.command(
+    name="sync",
+    description="klaim badge dev",
+)
+async def sync(ctx: interactions.CommandContext):
+    await client.tree.sync()
+    await ctx.response.send_message("synced")
+
 
 
  
