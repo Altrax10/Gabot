@@ -22,13 +22,13 @@ client = commands.Bot(command_prefix = '$', intents=discord.Intents.all())
 async def on_ready():
     print("moshi moshi")
     for i in range(len(cogs)):
-    try:
-        synced = await client.tree.sync()
-        print(f'Synced {len(synced)} command(s)')
-        client.load_extension(i)
-        print(cog +"Terload")
-    except Exception as e:
-        print(e)
+        try:
+            synced = await client.tree.sync()
+            print(f'Synced {len(synced)} command(s)')
+            client.load_extension(i)
+            print(cog +"Terload")
+        except Exception as e:
+            print(e)
 
 bot = interactions.Client(token=TOKEN)
 
