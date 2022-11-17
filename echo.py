@@ -15,7 +15,7 @@ class echo(commands.Cog):
     sendmsg = channel.send
     #reaction = ":valosagethumbsup:925975156608880640"
     await ctx.message.delete()
-    await ctx.trigger_typing()
+    await ctx.typing()
     await sendmsg(msg1)
     #await cek.add_reaction(reaction)
 async def setup(bot):
