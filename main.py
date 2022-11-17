@@ -43,10 +43,9 @@ async def klaim(ctx: interactions.CommandContext):
     
 @client.tree.command(
    name="sync",
-   description="klaim badge dev",
+   description="sync command to your guild",
 )
 async def sync(ctx: interactions.CommandContext):
-    await client.tree.sync()
     await ctx.response.send_message("synced")
 
 
