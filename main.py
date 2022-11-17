@@ -14,7 +14,7 @@ import afk
 #import genshing
 import interactions
 
-cogs=["echo"]
+cogs=["echo","slash"]
 TOKEN = "NzQ5OTYzMTkxNTg4NDg3MjQ4.GVNSaf.SIA6heSx2u5W7TBPeo3hjSZgn5tZOl-TP8QQwo"
 client = commands.Bot(command_prefix = '$', intents=discord.Intents.all())
 
