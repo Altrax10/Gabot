@@ -18,21 +18,15 @@ cogs=[status,musik,valo,echo,gi,pagi,afk]
 TOKEN = "NzQ5OTYzMTkxNTg4NDg3MjQ4.GVNSaf.SIA6heSx2u5W7TBPeo3hjSZgn5tZOl-TP8QQwo"
 client = commands.Bot(command_prefix = '$', intents=discord.Intents.all())
 
-@bot.event
-for i in range(len(cogs)):
-    try:
-        client.load_extension(i)
-        print(cog +"Terload")
-    except Exception as e:
-        print(e)
-
-
 @client.event
 async def on_ready():
     print("moshi moshi")
+    for i in range(len(cogs)):
     try:
         synced = await client.tree.sync()
         print(f'Synced {len(synced)} command(s)')
+        client.load_extension(i)
+        print(cog +"Terload")
     except Exception as e:
         print(e)
 
