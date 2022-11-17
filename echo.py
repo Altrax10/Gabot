@@ -6,8 +6,8 @@ import interactions
 class echo(commands.Cog):
   def __init__ (self, bot: commands.Bot ):
     self.bot = bot
-  @app_commands.command()
-  async def echo(self,ctx : interactions.CommandContext):
+  @commands.command()
+  async def echo(self,ctx):
     client = self.bot
     msg = ctx.message.content
     msg1 = msg[5:]
