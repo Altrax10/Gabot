@@ -18,6 +18,7 @@ cogs=[status,musik,valo,echo,gi,pagi,afk]
 TOKEN = "NzQ5OTYzMTkxNTg4NDg3MjQ4.GVNSaf.SIA6heSx2u5W7TBPeo3hjSZgn5tZOl-TP8QQwo"
 client = commands.Bot(command_prefix = '$', intents=discord.Intents.all())
 
+@bot.event
 for i in range(len(cogs)):
     try:
         client.load_extension(i)
@@ -124,7 +125,7 @@ async def on_message_edit(message_before, message_after):
     channel = client.get_channel(922660132507238431)
     auth = message_before.author
     mem = auth.bot
-    guildav = auth.avatar_url
+    guildav = auth.avatar
     sendmsg = channel.send
     if mem == True:
       return
