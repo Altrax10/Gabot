@@ -14,8 +14,8 @@ class slash(commands.Cog):
     MB = KB * 1024 # One MB is 1024 KB
     return int(bytes/MB)
 
-download_speed = bytes_to_mb(speed_test.download())
-upload_speed = bytes_to_mb(speed_test.upload())
+  download_speed = bytes_to_mb(speed_test.download())
+  upload_speed = bytes_to_mb(speed_test.upload())
 
 
   @app_commands.command(name="ping", description ="Speed Test")
