@@ -4,8 +4,8 @@ from discord.ext import commands
 class echo(commands.Cog):
   def __init__ (self, bot: commands.Bot ):
     self.bot = bot
-  @commands.command()
-  async def echo(self,ctx):
+  @commands.tree.command()
+  async def echo(self,ctx : interactions.CommandContext):
     client = self.bot
     msg = ctx.message.content
     msg1 = msg[5:]
