@@ -15,12 +15,12 @@ class slash(commands.Cog):
     download_speed = speed_test.download()
     upload_speed = speed_test.upload()
 
-    #await interaction.response.defer(ephemeral = True)
-    #await asyncio.sleep(4)
-    #await interaction.followup.send('yo')
+    await interaction.response.defer(ephemeral = True)
+    await asyncio.sleep(20)
+    await interaction.followup.send('yo')
     print(download_speed)
     print(upload_speed)
-    await interaction.response.send_message(f"Download = {download_speed}n/ Upload = {upload_speed}")
+    #await interaction.response.send_message(f"Download = {download_speed}n/ Upload = {upload_speed}")
    
 async def setup(bot):
     await bot.add_cog(slash(bot))
