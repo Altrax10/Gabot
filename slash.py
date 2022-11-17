@@ -19,7 +19,7 @@ class slash(commands.Cog):
   
   @app_commands.command(name="ping")
   async def ping(self, interaction: discord.Interaction) -> None:
-    await interaction.response.send_message("Download = "+download_speedn/"Upload = "+upload_speed)
+    await interaction.response.send_message(f"Download = {download_speed}n/ Upload = {upload_speed}")
    
 async def setup(bot):
     await bot.add_cog(slash(bot))
