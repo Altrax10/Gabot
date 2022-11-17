@@ -21,7 +21,7 @@ client = commands.Bot(command_prefix = '$', intents=discord.Intents.all())
 @client.event
 async def on_ready():
     print("moshi moshi")
-    for i in cogs
+    for i in cogs:
         try:
             synced = await client.tree.sync()
             print(f'Synced {len(synced)} command(s)')
