@@ -7,6 +7,8 @@ class slash(commands.Cog):
   def __init__ (self, bot: commands.Bot ):
     self.bot = bot
 
+  @app_commands.command(name="ping", description ="Speed Test")
+  async def ping(self, interaction: discord.Interaction) -> None:
     speed_test = speedtest.Speedtest()
     KB = 1024 # One Kilobyte is 1024 bytes
     MB = KB * 1024 # One MB is 1024 KB
@@ -18,10 +20,6 @@ class slash(commands.Cog):
     #await interaction.followup.send('yo')
     print(download_speed)
     print(upload_speed)
-
-  @app_commands.command(name="ping", description ="Speed Test")
-  async def ping(self, interaction: discord.Interaction) -> None:
-
     await interaction.response.send_message(f"Download = {download_speed}n/ Upload = {upload_speed}")
    
 async def setup(bot):
