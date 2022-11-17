@@ -18,6 +18,8 @@ class slash(commands.Cog):
     #await interaction.response.defer(ephemeral = True)
     #await asyncio.sleep(4)
     #await interaction.followup.send('yo')
+    print(download_speed)
+    print(upload_speed)
     await interaction.response.send_message(f"Download = {download_speed}n/ Upload = {upload_speed}")
    
 async def setup(bot):
