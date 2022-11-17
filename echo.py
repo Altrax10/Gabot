@@ -1,10 +1,11 @@
 import discord
+from discord import app_commands
 from discord.ext import commands
 
 class echo(commands.Cog):
   def __init__ (self, bot: commands.Bot ):
     self.bot = bot
-  @commands.tree.command()
+  @app_commands.command()
   async def echo(self,ctx : interactions.CommandContext):
     client = self.bot
     msg = ctx.message.content
