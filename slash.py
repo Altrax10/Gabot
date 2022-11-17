@@ -18,7 +18,7 @@ class slash(commands.Cog):
 
     download_speed = bytes_to_mb(speed_test.download())
     upload_speed = bytes_to_mb(speed_test.upload())
-    await interaction.response.defer(thinking = True)
+    await interaction.response.defer(ephemeral = True)
     await asyncio.sleep(5)
     await interaction.followup.send(f"Download = {download_speed}n/ Upload = {upload_speed}")
     #await interaction.response.send_message(f"Download = {download_speed}n/ Upload = {upload_speed}")
