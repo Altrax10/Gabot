@@ -14,14 +14,14 @@ import afk
 #import genshing
 import interactions
 
-cogs=[status,musik,valo,echo,gi,pagi,afk]
+cogs=["echo"]
 TOKEN = "NzQ5OTYzMTkxNTg4NDg3MjQ4.GVNSaf.SIA6heSx2u5W7TBPeo3hjSZgn5tZOl-TP8QQwo"
 client = commands.Bot(command_prefix = '$', intents=discord.Intents.all())
 
 @client.event
 async def on_ready():
     print("moshi moshi")
-    for i in range(len(cogs)):
+    for i in cogs
         try:
             synced = await client.tree.sync()
             print(f'Synced {len(synced)} command(s)')
