@@ -2,7 +2,7 @@ import discord
 from discord import app_commands
 from discord.ext import commands
 
-class echo(commands.Cog):
+class slash(commands.Cog):
   def __init__ (self, bot: commands.Bot ):
     self.bot = bot
     
@@ -12,4 +12,4 @@ class echo(commands.Cog):
     await interaction.response.send_message("Hello from command 1!", ephemeral=True)
    
 async def setup(bot):
-    await bot.add_cog(echo(bot))
+    await bot.add_cog(slash(bot))
