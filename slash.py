@@ -14,8 +14,11 @@ class slash(commands.Cog):
     MB = KB * 1024 # One MB is 1024 KB
     return int(bytes/MB)
 
-  return download_speed = bytes_to_mb(speed_test.download())
-  return upload_speed = bytes_to_mb(speed_test.upload())
+  download_speed = bytes_to_mb(speed_test.download())
+  upload_speed = bytes_to_mb(speed_test.upload())
+  
+  return download_speed
+  return upload_speed
   
   @app_commands.command(name="ping")
   async def ping(self, interaction: discord.Interaction) -> None:
