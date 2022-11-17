@@ -100,7 +100,7 @@ async def on_member_remove(member):
 async def on_message_delete(message):
     channel = client.get_channel(922660132507238431)
     auth = message.author
-    guildav = auth.avatar_url
+    guildav = auth.avatar
     sendmsg = channel.send
     mem = auth.bot
     if mem == True:
