@@ -8,6 +8,7 @@ class slash(commands.Cog):
     
   @app_commands.command(name="sync")
   async def sync(self, interaction: discord.Interaction) -> None:
+    client = self.bot
     await client.tree.sync()
     await interaction.response.send_message("Synced")
    
