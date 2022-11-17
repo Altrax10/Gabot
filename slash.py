@@ -9,7 +9,7 @@ class slash(commands.Cog):
   @app_commands.command(name="command-1")
   async def my_command(self, interaction: discord.Interaction) -> None:
     """ /command-1 """
-    await interaction.response.send_message("Hello from command 1!", ephemeral=True)
+    await interaction.response.send_message("Hello")
    
 async def setup(bot):
     await bot.add_cog(slash(bot))
