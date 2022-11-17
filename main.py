@@ -26,7 +26,7 @@ async def on_ready():
             synced = await client.tree.sync()
             print(f'Synced {len(synced)} command(s)')
             await client.load_extension(i)
-            print(cogs +"Terload")
+            print(i +"Terload")
         except Exception as e:
             print(e)
 
