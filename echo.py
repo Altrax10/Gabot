@@ -11,7 +11,7 @@ class echo(commands.Cog):
     msg1 = msg[5:]
     idku = ctx.message.channel
     idnya = idku.id
-    channel = bot.get_channel(idnya)
+    channel = client.get_channel(idnya)
     sendmsg = channel.send
     #reaction = ":valosagethumbsup:925975156608880640"
     await ctx.message.delete()
