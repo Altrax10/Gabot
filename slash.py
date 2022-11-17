@@ -6,10 +6,10 @@ class slash(commands.Cog):
   def __init__ (self, bot: commands.Bot ):
     self.bot = bot
     
-  @app_commands.command(name="command-1")
-  async def my_command(self, interaction: discord.Interaction) -> None:
-    """ /command-1 """
-    await interaction.response.send_message("Hello")
+  @app_commands.command(name="sync")
+  async def sync(self, interaction: discord.Interaction) -> None:
+    await client.tree.sync()
+    await interaction.response.send_message("Synced")
    
 async def setup(bot):
     await bot.add_cog(slash(bot))
