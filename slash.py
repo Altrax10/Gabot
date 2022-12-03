@@ -1,6 +1,7 @@
 import discord
 from discord import app_commands
 from discord.ext import commands
+import asyncio
 import speedtest
 
 class slash(commands.Cog):
@@ -20,7 +21,7 @@ class slash(commands.Cog):
     await interaction.followup.send('yo')
     print(download_speed)
     print(upload_speed)
-    #await interaction.response.send_message(f"Download = {download_speed}n/ Upload = {upload_speed}")
+    await interaction.response.send_message(f"Download = {download_speed}n/ Upload = {upload_speed}")
    
 async def setup(bot):
     await bot.add_cog(slash(bot))
