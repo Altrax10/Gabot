@@ -16,7 +16,7 @@ import interactions
 import slash
 
 cogs=["echo","slash","status"]
-TOKEN = "NzQ5OTYzMTkxNTg4NDg3MjQ4.GVNSaf.SIA6heSx2u5W7TBPeo3hjSZgn5tZOl-TP8QQwo"
+TOKEN = MYTOKEN
 client = commands.Bot(command_prefix = '$', intents=discord.Intents.all())
 
 @client.event
