@@ -1,5 +1,14 @@
 from flask import Flask
 from threading import Thread
+import discord
+from discord.ext import commands
+
+
+class alive(commands.Cog):
+
+  def __init__(self, bot):
+    self.bot = bot
+
 
 app = Flask('')
 
@@ -16,3 +25,7 @@ def run():
 def keep_alive():
   server = Thread(target=run)
   server.start()
+
+
+async def setup(bot):
+  await bot.add_cog(alive(bot))

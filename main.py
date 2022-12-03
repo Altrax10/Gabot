@@ -8,7 +8,7 @@ from datetime import datetime
 import echo
 import gi
 import pagi
-import keep_alive
+import alive
 #import chat
 import status
 import afk
@@ -17,7 +17,7 @@ import os
 import interactions
 import slash
 
-cogs = ['status', 'slash', 'keep_alive']
+cogs = ['status', 'slash', 'alive']
 MYTOKEN = os.environ['MYTOKEN']
 TOKEN = MYTOKEN
 client = commands.Bot(command_prefix='$', intents=discord.Intents.all())
@@ -25,6 +25,7 @@ client = commands.Bot(command_prefix='$', intents=discord.Intents.all())
 
 @client.event
 async def on_ready():
+  await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="OnePiece"))
   print("moshi moshi")
   for i in cogs:
     try:
@@ -173,5 +174,5 @@ async def purge(ctx, limit: int):
   await ctx.channel.purge(limit=limit)
 
 
-keep_alive.keep_alive()
+alive.keep_alive()
 client.run(TOKEN)
